@@ -38,7 +38,7 @@ const PastMembers = () => {
       try {
         setLoading(true);
         // This hits your Spring Boot controller
-        const response = await api.get("/supabase/get/pastMember");
+        const response = await api.get(`${import.meta.env.VITE_API_BASE_URL}/supabase/get/pastMember`);
         setMembers(response);
         setLoading(false);
       } catch (err) {

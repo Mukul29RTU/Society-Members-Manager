@@ -18,7 +18,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await api.post('/auth/login', { email, password });
+      const response = await api.post(`${import.meta.env.VITE_API_BASE_URL}/auth/login`, { email, password });
       // Handling both nested and direct data structures
       const loginData = response.data?.data || response.data || response;
       login({ email, role: loginData.role }, loginData.token); 

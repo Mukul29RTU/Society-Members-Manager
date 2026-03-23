@@ -34,7 +34,7 @@ useEffect(() => {
     const fetchAllMembers = async () => {
       try {
         setLoading(true); // Always start by showing the spinner
-        const response = await api.get("/supabase/get/members");
+        const response = await api.get(`${import.meta.env.VITE_API_BASE_URL}/supabase/get/members`);
         
         // 2. Safely unwrap the data
         const actualData = response.data?.data || response.data || response;

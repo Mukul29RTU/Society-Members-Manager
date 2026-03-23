@@ -28,7 +28,7 @@ const Dashboard = () => {
         setError(null);
 
         // 1. Fetch Stats
-        const countRes = await api.get("/dashboard/memberCount");
+        const countRes = await api.get(`${import.meta.env.VITE_API_BASE_URL}/dashboard/memberCount`);
         const statsData = countRes.data?.data || countRes.data || countRes;
         setCount({
           totalMembers: statsData.totalMembers || 0,
@@ -37,7 +37,7 @@ const Dashboard = () => {
         });
 
         // 2. Fetch Ward Data
-        const wardRes = await api.get("/dashboard/wardWiseCount");
+        const wardRes = await api.get(`${import.meta.env.VITE_API_BASE_URL}/dashboard/wardWiseCount`);
         const wardMap = wardRes.data?.data || wardRes.data || wardRes;
         
         const formattedWards = Object.entries(wardMap).map(([name, val], index) => ({
@@ -50,7 +50,7 @@ const Dashboard = () => {
 
         // 3. Fetch Recent Members
         if (user?.role.includes('ADMIN')) {
-          const recentRes = await api.get('/dashboard/recentMembers');
+          const recentRes = await api.get(`${import.meta.env.VITE_API_BASE_URL}/dashboard/recentMembers`);
           const recentData = recentRes.data?.data || recentRes.data || recentRes;
           setRecentMembers(Array.isArray(recentData) ? recentData : []);
         }

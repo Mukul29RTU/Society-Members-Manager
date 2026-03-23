@@ -17,10 +17,10 @@ const Register = () => {
     setError('');
     setLoading(true);
     try {
-      await api.post('/auth/register/sendotp', { email });
+      await api.post(`${import.meta.env.VITE_API_BASE_URL}/auth/register/sendotp`, { email });
       setStep(2);
     } catch (err) {
-      setError(err.response?.data?.message || 'OTP भेजने में विफल');
+      setError(err.response?.data?.message || err.response?.data || err.response?.message || err.response || 'OTP भेजने में विफल');
     } finally {
       setLoading(false);
     }
@@ -30,13 +30,13 @@ const Register = () => {
     setError('');
     setLoading(true);
     try {
-      const response = await api.post('/auth/register/validateotp', { email, otp });
+      const response = await api.post(`${import.meta.env.VITE_API_BASE_URL}/auth/register/validateotp`, { email, otp });
       // Capturing the token from the response
       const token = response.data?.data || response.data || response;
       setVerificationToken(token);
       setStep(3);
     } catch (err) {
-      setError(err.response?.data?.message || 'अमान्य OTP');
+      setError(err.response?.data?.message || err.response?.data || err.response?.message || err.response || 'अमान्य OTP');
     } finally {
       setLoading(false);
     }
@@ -47,7 +47,7 @@ const Register = () => {
     setError('');
     setLoading(true);
     try {
-      await api.post('/auth/register/adduser', { 
+      await api.post(`${import.meta.env.VITE_API_BASE_URL}/auth/register/adduser`, { 
         email, 
         token: verificationToken, 
         password 

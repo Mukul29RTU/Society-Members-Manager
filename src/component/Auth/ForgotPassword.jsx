@@ -28,7 +28,7 @@ const ForgotPassword = () => {
     setError('');
     try {
       
-      await api.post('/auth/forgot-password/sendotp', { email });
+      await api.post(`${import.meta.env.VITE_API_BASE_URL}/auth/forgot-password/sendotp`, { email });
         console.log("Requesting OTP for email:", email);
       setStep('otp');
     } catch (err) {
@@ -44,7 +44,7 @@ const ForgotPassword = () => {
     setLoading(true);
     setError('');
     try {
-      const response = await api.post('/auth/forgot-password/validateotp', { email, otp });
+      const response = await api.post(`${import.meta.env.VITE_API_BASE_URL}/auth/forgot-password/validateotp`, { email, otp });
       console.log("OTP Validation Response:", response);
       setToken(response); 
       setStep('reset');
@@ -65,7 +65,7 @@ const ForgotPassword = () => {
     setLoading(true);
     setError('');
     try {
-      await api.post('/auth/forgot-password/reset', { email, token, newPassword });
+      await api.post(`${import.meta.env.VITE_API_BASE_URL}/auth/forgot-password/reset`, { email, token, newPassword });
       alert("पासवर्ड सफलतापूर्वक बदल गया है!");
       navigate('/login');
     } catch (err) {

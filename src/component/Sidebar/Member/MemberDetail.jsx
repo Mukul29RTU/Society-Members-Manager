@@ -23,7 +23,7 @@ const MemberDetail = () => {
       try {
         setLoading(true);
         // Replace with your actual API endpoint for a single member
-        const response = await api.get(`/supabase/get/${id}`);
+        const response = await api.get(`${import.meta.env.VITE_API_BASE_URL}/supabase/get/${id}`);
         setMember(response);
         setLoading(false);
       } catch (err) {
@@ -39,9 +39,9 @@ const MemberDetail = () => {
     if (window.confirm("क्या आप वाकई इस सदस्य को हटाना चाहते हैं?")) {
       try {
         if(memberCategory === "present_member") {
-          await api.delete(`/supabase/delete/${id}`);
+          await api.delete(`${import.meta.env.VITE_API_BASE_URL}/supabase/delete/${id}`);
         } else if(memberCategory === "past_member") {
-          await api.delete(`/supabase/delete/pastMember/${id}`);
+          await api.delete(`${import.meta.env.VITE_API_BASE_URL}/supabase/delete/pastMember/${id}`);
         }
       
         alert("सदस्य सफलतापूर्वक हटा दिया गया");

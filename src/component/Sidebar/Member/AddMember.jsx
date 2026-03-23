@@ -60,7 +60,7 @@ const AddMember = () => {
     setLoading(true);
 
     try {
-      const response = await api.post('/supabase/add', combinedData);
+      const response = await api.post(`${import.meta.env.VITE_API_BASE_URL}/supabase/add`, combinedData);
 
       if (response) {
         alert("सदस्य का डेटा सफलतापूर्वक सुरक्षित कर लिया गया है!");

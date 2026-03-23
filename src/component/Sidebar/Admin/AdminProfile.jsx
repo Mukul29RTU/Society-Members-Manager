@@ -19,7 +19,7 @@ const AdminProfile = () => {
     const fetchDetail = async () => {
       try {
         setLoading(true); 
-        const data = await api.get(`/supabase/get/userData/${email}`);
+        const data = await api.get(`${import.meta.env.VITE_API_BASE_URL}/supabase/get/userData/${email}`);
    
             setMember(data); // Set the actual member object
        

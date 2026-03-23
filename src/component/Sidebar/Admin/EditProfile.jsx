@@ -29,7 +29,7 @@ const EditProfile = () => {
   useEffect(() => {
     const fetchMember = async () => {
       try {
-        const response = await api.get(`/supabase/getUserById/${id}`);
+        const response = await api.get(`${import.meta.env.VITE_API_BASE_URL}/supabase/getUserById/${id}`);
         const data = response;
 
         setFormData({
@@ -86,7 +86,7 @@ const EditProfile = () => {
 
     try {
       // Using POST or PUT depending on your Spring Boot Controller
-      await api.put('/supabase/update', dataToSubmit);
+      await api.put(`${import.meta.env.VITE_API_BASE_URL}/supabase/update`, dataToSubmit);
       alert("डेटा सफलतापूर्वक अपडेट किया गया!");
       navigate('/dashboard'); 
     } catch (error) {
