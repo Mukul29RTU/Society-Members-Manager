@@ -67,7 +67,7 @@ const ForgotPassword = () => {
     try {
       await api.post(`${import.meta.env.VITE_API_BASE_URL}/auth/forgot-password/reset`, { email, token, newPassword });
       alert("पासवर्ड सफलतापूर्वक बदल गया है!");
-      navigate('/login');
+      navigate('/');
     } catch (err) {
       setError("पासवर्ड रिसेट करने में विफल। सेशन एक्सपायर हो सकता है।");
     } finally {
@@ -226,7 +226,7 @@ const ForgotPassword = () => {
           )}
 
           <div className="text-center mt-4">
-            <Link to="/login" className="text-decoration-none text-muted small fw-bold">
+            <Link to="/" className="text-decoration-none text-muted small fw-bold">
               <FaArrowLeft className="me-1" /> वापस लॉगिन पर जाएं
             </Link>
           </div>

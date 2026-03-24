@@ -53,7 +53,7 @@ const Register = () => {
         password 
       });
       alert('रजिस्ट्रेशन सफल! कृपया लॉगिन करें।');
-      navigate('/login');
+      navigate('/');
     } catch (err) {
       setError(err.response?.data?.message || err.response?.data || err.response?.message || err.response || 'रजिस्ट्रेशन विफल');
     } finally {
@@ -208,7 +208,7 @@ const Register = () => {
           <div className="text-center mt-4">
             <p className="text-muted small mb-0">
               Already have an account? 
-              <Link to="/login" className="text-primary fw-bold text-decoration-none ms-2">
+              <Link to="/" className="text-primary fw-bold text-decoration-none ms-2">
                 Login here
               </Link>
             </p>

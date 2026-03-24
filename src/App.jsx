@@ -34,11 +34,11 @@ function App() {
             width: '100%' 
           }}>
              <Routes>
-                <Route path="/login" element={<Login />} />
+                <Route path="/" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
                 
-                <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+                <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
                 <Route path="/members" element={<ProtectedRoute><MembersTable /></ProtectedRoute>} />
                 <Route path="/add-member" element={<ProtectedRoute allowedRoles={['ROLE_ADMIN']}><AddMember /></ProtectedRoute>} />
                 <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />

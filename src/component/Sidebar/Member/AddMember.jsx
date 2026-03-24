@@ -38,7 +38,7 @@ const AddMember = () => {
   const combinedData = {
     ...formData,
     "क्रमांक_संख्या": `क्र. ${formData.सदस्य_नंबर}`,
-    "पूर्ण_जानकारी": `क्र. ${formData.सदस्य_नंबर} - ${formData.नाम_शीर्षक} ${formData.नाम}, ${formData.पिता_शीर्षक} ${formData.पिता_का_नाम}, ${formData.पहचान}, ${formData.पता}, ${formData.संपर्क}, वार्ड ${formData.वार्ड_संख्या}`,
+    "पूर्ण_जानकारी": `क्र. ${formData.सदस्य_नंबर} ${formData.नाम_शीर्षक} ${formData.नाम} ${formData.पिता_शीर्षक} ${formDataपिता_का_नाम} ${formData.पहचान} ${formData.पता} ${formData.संपर्क} वार्ड ${formData.वार्ड_संख्या}`,
     "वार्ड_संख्या": `वार्ड ${formData.वार्ड_संख्या}`,
     "नाम" : `${formData.नाम_शीर्षक}  ${formData.नाम} ${"पुत्र"} ${formData.पिता_शीर्षक}  ${formData.पिता_का_नाम}`,
   };

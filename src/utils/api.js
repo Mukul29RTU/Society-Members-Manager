@@ -52,8 +52,8 @@ api.interceptors.response.use(
       // Token expired or invalid
       localStorage.removeItem('jwt_token');
       // Only redirect if not already on login page to avoid loops
-      if (!window.location.pathname.includes('/login')) {
-         window.location.href = '/login';
+      if (!window.location.pathname.includes('/')) {
+         window.location.href = '/';
       }
     }
     return Promise.reject(error);
