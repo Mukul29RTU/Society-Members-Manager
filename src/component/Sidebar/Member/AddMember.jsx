@@ -126,7 +126,7 @@ const AddMember = () => {
                 <select className="form-select flex-grow-0" style={{width: '120px'}} name="पिता_शीर्षक" onChange={handleChange}>
                     <option value="श्री">श्री</option>
                     <option value="श्रीमती">श्रीमती</option>
-                    <option value="स्वर्गीय श्री">स्वर्गीय</option>
+                    <option value="स्वर्गीय श्री">स्वर्गीय श्री</option>
                   </select>
                 <input 
                   type="text" name="पिता_का_नाम" className="form-control" 
