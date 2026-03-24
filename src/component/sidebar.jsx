@@ -12,7 +12,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const menuItems = [
-    { name: 'Home', path: '/', icon: <FaHome /> },
+    { name: 'Home', path: '/home', icon: <FaHome /> },
     { name: 'Dashboard', path: '/dashboard', icon: <FaDatabase /> },
     { name: 'Members', path: '/members', icon: <FaUsers />, adminOnly: true },
     { name: 'Add Member', path: '/add-member', icon: <FaUser />, adminOnly: true },

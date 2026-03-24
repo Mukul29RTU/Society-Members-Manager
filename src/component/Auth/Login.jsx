@@ -22,7 +22,7 @@ const Login = () => {
       // Handling both nested and direct data structures
       const loginData = response.data?.data || response.data || response;
       login({ email, role: loginData.role }, loginData.token); 
-      navigate('/');
+      navigate('/home');
     } catch (err) {
       setError(err.response?.data?.message || 'ईमेल या पासवर्ड गलत है');
     } finally {
