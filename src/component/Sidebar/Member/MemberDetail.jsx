@@ -23,7 +23,7 @@ const MemberDetail = () => {
       try {
         setLoading(true);
         // Replace with your actual API endpoint for a single member
-        const response = await api.get(`${import.meta.env.VITE_API_BASE_URL}/supabase/get/${id}`);
+        const response = await api.get(`${import.meta.env.VITE_API_BASE_URL}/supabase/getUserById/${id}`);
         setMember(response);
         setLoading(false);
       } catch (err) {
