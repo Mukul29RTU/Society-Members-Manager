@@ -42,7 +42,7 @@ function App() {
                 <Route path="/members" element={<ProtectedRoute><MembersTable /></ProtectedRoute>} />
                 <Route path="/add-member" element={<ProtectedRoute allowedRoles={['ROLE_ADMIN']}><AddMember /></ProtectedRoute>} />
                 <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-                <Route path="/member/:id" element={<ProtectedRoute><MemberDetail/></ProtectedRoute>} />
+                <Route path="/member/:id" element={<ProtectedRoute allowedRoles={['ROLE_ADMIN']}><MemberDetail/></ProtectedRoute>} />
                 <Route path="/profile/:email" element={<ProtectedRoute><AdminProfile /></ProtectedRoute>} />
                 <Route path="/editMember/:id" element={<ProtectedRoute allowedRoles={['ROLE_ADMIN']}><EditMember /></ProtectedRoute>} />
                    <Route path="/editProfile/:id" element={<ProtectedRoute allowedRoles={['ROLE_ADMIN', 'ROLE_USER']}>
